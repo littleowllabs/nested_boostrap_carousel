@@ -1,0 +1,199 @@
+.nested-carousel {
+  position: relative;
+}
+
+.nested-carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nested-carousel-inner > .nested-item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.6s ease-in-out left;
+          transition: 0.6s ease-in-out left;
+}
+
+.nested-carousel-inner > .nested-item > img,
+.nested-carousel-inner > .nested-item > a > img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.nested-carousel-inner > .nested-active,
+.nested-carousel-inner > .next,
+.nested-carousel-inner > .prev {
+  display: block;
+}
+
+.nested-carousel-inner > .nested-active {
+  left: 0;
+}
+
+.nested-carousel-inner > .next,
+.nested-carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.nested-carousel-inner > .next {
+  left: 100%;
+}
+
+.nested-carousel-inner > .prev {
+  left: -100%;
+}
+
+.nested-carousel-inner > .next.left,
+.nested-carousel-inner > .prev.right {
+  left: 0;
+}
+
+.nested-carousel-inner > .nested-active.left {
+  left: -100%;
+}
+
+.nested-carousel-inner > .nested-active.right {
+  left: 100%;
+}
+
+.nested-carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.nested-carousel-control.left {
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0), color-stop(rgba(0, 0, 0, 0.0001) 100%));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+
+.nested-carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
+  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0), color-stop(rgba(0, 0, 0, 0.5) 100%));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+}
+
+.nested-carousel-control:hover,
+.nested-carousel-control:focus {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+.nested-carousel-control .icon-prev,
+.nested-carousel-control .icon-next,
+.nested-carousel-control .glyphicon-chevron-left,
+.nested-carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+
+.nested-carousel-control .icon-prev,
+.nested-carousel-control .icon-next {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  font-family: serif;
+}
+
+.nested-carousel-control .icon-prev:before {
+  content: '\2039';
+}
+
+.nested-carousel-control .icon-next:before {
+  content: '\203a';
+}
+
+.nested-carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+  background-color: #ffffff;
+}
+
+.nested-carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+}
+
+.nested-carousel-indicators .nested-active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #cccccc;
+}
+
+.nested-carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.nested-carousel-caption .btn {
+  text-shadow: none;
+}
+
+@media screen and (min-width: 768px) {
+  .nested-carousel-control .icon-prev,
+  .nested-carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    font-size: 30px;
+  }
+  .nested-carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+  }
+  .nested-carousel-indicators {
+    bottom: 20px;
+  }
+}
